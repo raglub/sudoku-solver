@@ -6,15 +6,14 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
 import Board from './components/Board.vue';
 
-@Component({
+export default {
+  name: 'App',
   components: {
     Board,
   },
-})
-export default class App extends Vue {}
+}
 </script>
 
 <style>
