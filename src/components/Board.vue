@@ -1,10 +1,14 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ title }}</h1>
     <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
+      <table id="example-2">
+        <tr v-for="row in 9" :key="row">
+          <td v-for="column in 9" :key="column">
+            <input v-model="board.board[(row - 1) * 9 + column - 1].value" />
+          </td>
+        </tr>
+      </table>
     </p>
     <h3>Installed CLI Plugins</h3>
     <ul>
@@ -32,11 +36,17 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Cell } from '../utils/cell';
+import { Board } from '../utils/board';
 
-@Component
-export default class HelloWorld extends Vue {
-  @Prop() private msg!: string;
+export default {
+  data () {
+    return {
+      title: "Sudoku Solver",
+      cell: new Cell(0, 0, 9),
+      board: new Board()
+    }
+  }
 }
 </script>
 
@@ -55,5 +65,9 @@ li {
 }
 a {
   color: #42b983;
+}
+
+input {
+  width: 20px;
 }
 </style>
