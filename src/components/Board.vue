@@ -1,15 +1,14 @@
 <template>
   <div>
-    <h1>{{ title }}</h1>
     <p>
-      <table id="example-2">
+      <table>
         <tr v-for="row in 9" :key="row">
           <td v-for="column in 9" :key="column">
             <input v-model="board.board[(row - 1) * 9 + column - 1].value" />
           </td>
         </tr>
       </table>
-      <button @click="handleValidation">Check</button>
+      <el-button type="primary" @click="handleValidation" round>Check</el-button>
     </p>
   </div>
 
@@ -22,8 +21,6 @@ import { Board } from '../utils/board';
 
 @Component
 export default class BoardView extends Vue {
-  
-  private title = "Sudoku Solver";
   private cell: Cell = new Cell(0, 0, 9);
   private board: Board = new Board();
   
