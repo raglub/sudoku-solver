@@ -33,7 +33,7 @@
     "@vue/eslint-config-typescript": "^5.0.2",
     "@vue/test-utils": "^1.0.3",
     "chai": "^4.1.2",
-    "electron": "^9.0.0",
+    "electron": "^22.3.21",
     "typescript": "~3.9.3",
     "vue-cli-plugin-electron-builder": "~2.0.0-rc.1",
     "vue-template-compiler": "^2.6.11"
